@@ -13,47 +13,64 @@
             referrerpolicy="no-referrer"
         />
     </head>
-    <body>
-        <div>
-            <form>
-                <input type="text" name="todo" placeholder="Add item..." />
-                <button type="submit">
-                    <img src="./icons/plus.svg" alt="icon-plus" />
+    <body class="todoList">
+        <div class="content">
+            <form class="add">
+                <input
+                    type="text"
+                    name="todo"
+                    placeholder="Add item..."
+                    class="input-todo"
+                />
+                <button type="submit" class="add-button">
+                    <img
+                        src="./icons/plus.svg"
+                        alt="icon-plus"
+                        class="add-todo"
+                    />
                 </button>
             </form>
-            <ul>
+            <ul class="todos">
                 <li>
                     <input type="checkbox" id="todo_1" />
                     <label for="todo_1">
-                        <span></span>Buy Flight Tickets
+                        <span class="check"></span>Buy Flight Tickets
                     </label>
-                    <button type="button">
+                    <button type="button" class="delete-button">
                         <!-- <svg width="30" height="30">
               <use href="./icons/delete.svg"></use>
             </svg> -->
-                        <img src="./icons/delete.svg" alt="delete icon" />
+                        <img
+                            src="./icons/delete.svg"
+                            alt="delete icon"
+                            class="delete-image"
+                        />
                     </button>
                 </li>
                 <li>
                     <input type="checkbox" id="todo_2" />
-                    <label for="todo_2"> <span></span>Find AirBnB </label>
-                    <button type="button">
+                    <label for="todo_2">
+                        <span class="check"></span>Find AirBnB
+                    </label>
+                    <button type="button" class="delete-button">
                         <img src="./icons/delete.svg" alt="delete icon" />
                     </button>
                 </li>
                 <li>
                     <input type="checkbox" id="todo_3" />
                     <label for="todo_3">
-                        <span></span> Look up things to do
+                        <span class="check"></span> Look up things to do
                     </label>
-                    <button type="button">
+                    <button type="button" class="delete-button">
                         <img src="./icons/delete.svg" alt="delete icon" />
                     </button>
                 </li>
                 <li>
                     <input type="checkbox" id="todo_4" />
-                    <label for="todo_4"> <span></span> Passport </label>
-                    <button type="button">
+                    <label for="todo_4">
+                        <span class="check"></span> Passport
+                    </label>
+                    <button type="button" class="delete-button">
                         <img src="./icons/delete.svg" alt="delete icon" />
                     </button>
                 </li>

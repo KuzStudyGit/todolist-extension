@@ -25,4 +25,16 @@ class Todo {
             )
         );
     }
+
+    async init() {
+        this.form.addEventListener("submit", (event) =>
+            this.handleSubmit(event)
+        );
+        this.list.addEventListener("click", (event) =>
+            this.handleToggle(event)
+        );
+        this.list.addEventListener("click", (event) =>
+            this.handleDelete(event)
+        );
+    }
 }

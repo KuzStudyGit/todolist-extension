@@ -37,4 +37,19 @@ class Todo {
             this.handleDelete(event)
         );
     }
+
+    saveTodosToStorage() {
+        chrome.storage.local.set({ todos: JSON.stringify(this.todos) });
+    }
+
+    async getTodosFromStorage() {
+        try {
+            const data = await chrome.storage.local.get(["todos"]);
+            const todos = JSON.parse(data.todos);
+            this.todos = todos;
+            this.updateUI();
+        } catch (error) {
+            this.todos = [];
+        }
+    }
 }

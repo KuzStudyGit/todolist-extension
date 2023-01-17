@@ -1,1 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito:600,700&display=swap");
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}

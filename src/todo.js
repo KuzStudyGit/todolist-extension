@@ -52,4 +52,53 @@ class Todo {
             this.todos = [];
         }
     }
+
+    handleSubmit(event) {
+        event.preventDefault();
+
+        const text = event.currentTarget.elements.todo.value.trim();
+
+        const newTodo = { id: v4(), text, checked: false };
+
+        this.addTodo(newTodo);
+
+        this.list.insertAdjacentHTML(
+            "afterbegin",
+            this.createTodoMarkup(newTodo)
+        );
+    }
+
+    handleToggle(event) {
+        if (event.target.type !== "checkbox") return;
+
+        const id = event.target.id;
+
+        this.toggleTodo(id);
+    }
+
+    handleDelete(event) {
+        if (!event.target.classList.contains("delete-image")) return;
+
+        const todo = event.target.parentNode.parentNode;
+
+        this.deleteTodo(todo.children[0].id);
+
+        todo.remove();
+    }
+
+    updateUI() {
+        this.list.innerHTML = this.todos.map(this.createTodoMarkup).join("");
+    }
+
+    createTodoMarkup({ id, text, checked }) {
+        return ` <li><input type="checkbox" name="checkbox" id="${id}" ${
+            checked ? "checked" : ""
+        }/>
+          <label for="${id}">
+            <span class="check"></span> ${text}
+          </label>
+          <button type="button" class="delete-button">
+            <img src="${iconUrl}" alt="delete icon" class="delete-image"/>
+          </button></li>`;
+    }
 }

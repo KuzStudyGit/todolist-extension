@@ -1,0 +1,17 @@
+{
+  "name": "todolist-extension",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "parcel watch src/manifest.json --host localhost --config @parcel/config-webextension",
+    "build": "parcel build src/manifest.json --config @parcel/config-webextension"
+  },
+  "devDependencies": {
+    "@parcel/config-webextension": "^2.8.2",
+    "@parcel/transformer-sass": "2.8.2",
+    "parcel": "latest"
+  },
+  "dependencies": {
+    "crx-hotreload": "^1.0.6",
+    "uuid": "^9.0.0"
+  }
+}

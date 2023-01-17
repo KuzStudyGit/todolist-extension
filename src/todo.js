@@ -1,3 +1,7 @@
+import { v4 } from "uuid";
+
+const iconUrl = new URL("icons/delete.svg", import.meta.url);
+
 class Todo {
     constructor({ todos = [], inputSelector, formSelector, listSelector }) {
         this.todos = todos;
@@ -102,3 +106,22 @@ class Todo {
           </button></li>`;
     }
 }
+
+const todos = [
+    { id: "1", text: "1", checked: false },
+    { id: "2", text: "2", checked: true },
+    { id: "3", text: "3", checked: false },
+    { id: "4", text: "4", checked: true },
+    { id: "5", text: "5", checked: false },
+    { id: "6", text: "6", checked: false },
+];
+
+const todoList = new Todo({
+    todos,
+    inputSelector: ".inputTodo",
+    formSelector: ".add",
+    listSelector: ".todos",
+});
+
+todoList.init();
+todoList.getTodosFromStorage();
